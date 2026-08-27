@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. Definir variables (Reemplaza con los datos de tu repositorio)
-REPO_URL="https://github.com/TU_USUARIO/TU_REPOSITORIO.git"
+REPO_URL="https://github.com/f1725developmenttechnologies-create/klarixa-ecosistema-ia
 COMMIT_MSG="Initial commit: KLARIXA Multi-Agent Backend"
 
 echo "🚀 Iniciando la creación del proyecto KLARIXA..."
