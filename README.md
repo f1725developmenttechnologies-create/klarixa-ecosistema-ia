@@ -1,36 +1,42 @@
 # 🧠 Ecosistema KLARIXA IA (Multi-Agent Architecture)
 
-**KLARIXA IA** es un ecosistema de agentes inteligentes desacoplados diseñados para operar de forma asíncrona, combinando inferencia de modelos de lenguaje de gran escala (LLMs), validación criptográfica y procesamiento de datos en red.
+**KLARIXA IA** es un ecosistema distribuido de agentes inteligentes desacoplados, diseñado bajo principios de arquitectura asíncrona avanzada. El sistema integra módulos especializados que coordinan la inferencia de modelos de lenguaje de gran escala (LLMs), validación y firma criptográfica, e ingesta dinámica de datos.
 
 ---
 
-## 🛠️ Arquitectura de Cerebros
+## 🏛️ Visión y Arquitectura General
 
-El sistema se divide en módulos independientes alojados en sus respectivos cuadernos de ejecución en Jupyter:
-
-| Cuaderno | Módulo | Descripción |
-| :--- | :--- | :--- |
-| `Klarixa_ecosistema_ia1.ipynb` | **Cerebro 1: Decisor** | Orquestador central encargado de evaluar contextos y tomar decisiones operativas. |
-| `Klarixa_ecosistema_ia_2.ipynb` | **Cerebro 2: Security & Key Management** | Gestión de claves API (`Groq`), firma criptográfica e inferencia rápida con LLMs (`openai/gpt-oss-120b`). |
-| `Klarixa_ecosistema_ia_3.ipynb` | **Cerebro 3: Network Ingestor** | Ingesta de datos de red e integración mediante RPC asíncrono. |
+El ecosistema opera mediante una red de cerebros (nodos de cómputo independientes) expuestos a través de microservicios HTTP asíncronos con FastAPI y túneles `pyngrok`. Esta separación garantiza alta disponibilidad, modularidad y tolerancia a fallos en la orquestación multi-agente.
 
 ---
 
-## 🚀 Tecnologías Utilizadas
+## 🛠️ Desglose de Módulos (Cerebros)
 
-* **Lenguaje:** Python 3.10+
-* **Framework Web:** FastAPI & Uvicorn
-* **Motor Asíncrono:** `asyncio` / `httpx` / `nest_asyncio`
-* **Modelo de Datos:** `pydantic`
-* **Proveedor LLM:** Groq API (`openai/gpt-oss-120b`)
-* **Túnel de Red:** `pyngrok`
+El sistema se divide en tres módulos independientes alojados en sus respectivos cuadernos de ejecución en Jupyter:
+
+| Cuaderno | Módulo | Función Principal | Stack Técnico |
+| :--- | :--- | :--- | :--- |
+| `Klarixa_ecosistema_ia1.ipynb` | **Cerebro 1: Decisor** | Orquestador central encargado de evaluar contextos, priorizar tareas y tomar decisiones operativas de forma autónoma. | `FastAPI`, `Pydantic`, `asyncio` |
+| `Klarixa_ecosistema_ia_2.ipynb` | **Cerebro 2: Security & Key Management** | Gestión segura de credenciales, inferencia rápida mediante LLMs (`openai/gpt-oss-120b`) y firma criptográfica de peticiones. | `Groq API`, `FastAPI`, `pyngrok` |
+| `Klarixa_ecosistema_ia_3.ipynb` | **Cerebro 3: Network Ingestor** | Ingesta de datos de red, extracción de información web en tiempo real e integración RPC asíncrona. | `httpx`, `nest_asyncio`, `FastAPI` |
 
 ---
 
-## 🔧 Instalación y Despliegue
+## 🚀 Tecnologías y Herramientas
+
+* **Lenguaje Principal:** Python 3.10+
+* **Framework API:** FastAPI / Uvicorn
+* **Orquestación Asíncrona:** `asyncio`, `nest_asyncio`, `httpx`
+* **Modelos de Lenguaje (LLM):** Groq API (`openai/gpt-oss-120b`)
+* **Validación de Datos:** Pydantic v2
+* **Túneles de Red:** pyngrok
+* **Despliegue y Contenedores:** Docker, Google Colab, Termux
+
+---
+
+## 🔧 Instalación y Despliegue Local
 
 ### 1. Clonar el repositorio
 ```bash
 git clone [https://github.com/f1725developmenttechnologies-create/klarixa-ecosistema-ia.git](https://github.com/f1725developmenttechnologies-create/klarixa-ecosistema-ia.git)
 cd klarixa-ecosistema-ia
-
