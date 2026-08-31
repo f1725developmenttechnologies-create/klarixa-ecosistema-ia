@@ -1,6 +1,6 @@
 # 🧠 Ecosistema KLARIXA IA (Multi-Agent Architecture)
 
-**KLARIXA IA** es un ecosistema distribuido de agentes inteligentes desacoplados, diseñado bajo principios de arquitectura asíncrona avanzada. El sistema integra módulos especializados que coordinan la inferencia de modelos de lenguaje de gran escala (LLMs), validación y firma criptográfica, e ingesta dinámica de datos.
+**KLARIXA IA** es un ecosistema distribuido de agentes inteligentes desacoplados, diseñado bajo principios de arquitectura asíncrona avanzada. El sistema integra módulos especializados que coordinan inferencia de LLMs, validación criptográfica e ingesta dinámica de datos.
 
 ---
 
@@ -40,3 +40,25 @@ El sistema se divide en tres módulos independientes alojados en sus respectivos
 ```bash
 git clone [https://github.com/f1725developmenttechnologies-create/klarixa-ecosistema-ia.git](https://github.com/f1725developmenttechnologies-create/klarixa-ecosistema-ia.git)
 cd klarixa-ecosistema-ia
+
+2. Configurar variables de entorno
+Crea un archivo .env tomando como base .env.example:
+cp .env.example .env
+
+Define las variables necesarias:
+GROQ_API_KEY=tu_api_key_de_groq
+NGROK_AUTHTOKEN=tu_authtoken_de_ngrok
+PORT=8001
+
+3. Instalar dependencias y ejecutar
+pip install -r requirements.txt
+python main.py
+
+🛡️ Estándares de Ciberseguridad
+Este repositorio cumple de forma estricta con las políticas de GitHub Secret Scanning. Toda credencial de API, llave privada o token de acceso se gestiona dinámicamente desde variables de entorno (os.getenv), evitando la exposición involuntaria de secretos en el código o en el historial de commits.
+
+**Instrucción rápida para móvil:**
+1. Copia todo este bloque con la opción de copiar texto.
+2. Toca el icono del **lápiz** en el `README.md` de GitHub.
+3. Selecciona **todo el texto actual**, dale a **Pegar / Reemplazar** y presiona **Commit changes...**.
+
